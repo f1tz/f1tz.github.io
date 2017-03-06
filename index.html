@@ -326,10 +326,15 @@
 
       
         
-          <p>之前有看过好多网友都在GitHub有搭建过博客，于是今天抽空自己也部署了一个Hexo在自己的GitHub上，把遇到的一些问题总结一下，避免以后犯错。</p>
-<h3 id="GitHub端操作"><a href="#GitHub端操作" class="headerlink" title="GitHub端操作"></a>GitHub端操作</h3><h5 id="1、配置SSH-Keys"><a href="#1、配置SSH-Keys" class="headerlink" title="1、配置SSH Keys"></a>1、配置SSH Keys</h5><p>终端里生成RSA Key</p>
-<p> <code>ssh-keygen -t rsa -C &quot;注册邮箱地址&quot;</code></p>
-<p>连续3次回车，最终会生成一个文件在用户目录下,<br>
+          <p>之前有看过好多网友都在GitHub有搭建过博客，于是今天抽空自己也部署了一个Hexo在自己的GitHub上，把遇到的一些问题总结一下，避免以后犯错。以下演示基于MacOS 10.11.5环境。</p>
+<blockquote>
+<p>声明下文内的 “{username} = 你的GitHub登录名”</p>
+</blockquote>
+<h3 id="GitHub端"><a href="#GitHub端" class="headerlink" title="GitHub端"></a>GitHub端</h3><h5 id="1、配置SSH-Keys"><a href="#1、配置SSH-Keys" class="headerlink" title="1、配置SSH Keys"></a>1、配置SSH Keys</h5><p>终端里生成RSA Key</p>
+<p> <code>sudo ssh-keygen -t rsa -C &quot;{username}@github.com&quot;</code></p>
+<blockquote>
+<p>在Mac环境下，这里一定要使用root权限生成SSHKey，因为后面部署会需要root权限。<br>之前遇到个一个情况，第一次可以使用Hexo部署，没有报错，但之后就不行了，后来基于root重新生成的Key才解决。<br>FATAL Permission denied (publickey).<br>fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights<br>and the repository exists.<br><a href="http://idealife.github.io/2015/10/02/Hexo部署时提示fatal-Could-not-read-from-remote-repository的问题处理/">这条解决方法，要感谢这位大神的经验</a><br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/03/06/github部署hexo问题总结/#more" rel="contents">

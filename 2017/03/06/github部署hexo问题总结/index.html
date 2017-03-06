@@ -87,25 +87,31 @@
 
 
 
-<meta name="description" content="之前有看过好多网友都在GitHub有搭建过博客，于是今天抽空自己也部署了一个Hexo在自己的GitHub上，把遇到的一些问题总结一下，避免以后犯错。
-GitHub端操作1、配置SSH Keys终端里生成RSA Key
- ssh-keygen -t rsa -C &amp;quot;注册邮箱地址&amp;quot;
-连续3次回车，最终会生成一个文件在用户目录下,">
+<meta name="description" content="之前有看过好多网友都在GitHub有搭建过博客，于是今天抽空自己也部署了一个Hexo在自己的GitHub上，把遇到的一些问题总结一下，避免以后犯错。以下演示基于MacOS 10.11.5环境。
+
+声明下文内的 “{username} = 你的GitHub登录名”
+
+GitHub端1、配置SSH Keys终端里生成RSA Key
+ sudo ssh-keygen -t rsa -C &amp;quot;{u">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GitHub部署Hexo问题总结">
 <meta property="og:url" content="http://yoursite.com/2017/03/06/github部署hexo问题总结/index.html">
 <meta property="og:site_name" content="S.H.I.E.L.D.">
-<meta property="og:description" content="之前有看过好多网友都在GitHub有搭建过博客，于是今天抽空自己也部署了一个Hexo在自己的GitHub上，把遇到的一些问题总结一下，避免以后犯错。
-GitHub端操作1、配置SSH Keys终端里生成RSA Key
- ssh-keygen -t rsa -C &amp;quot;注册邮箱地址&amp;quot;
-连续3次回车，最终会生成一个文件在用户目录下,">
-<meta property="og:updated_time" content="2017-03-06T12:55:44.000Z">
+<meta property="og:description" content="之前有看过好多网友都在GitHub有搭建过博客，于是今天抽空自己也部署了一个Hexo在自己的GitHub上，把遇到的一些问题总结一下，避免以后犯错。以下演示基于MacOS 10.11.5环境。
+
+声明下文内的 “{username} = 你的GitHub登录名”
+
+GitHub端1、配置SSH Keys终端里生成RSA Key
+ sudo ssh-keygen -t rsa -C &amp;quot;{u">
+<meta property="og:updated_time" content="2017-03-06T13:45:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub部署Hexo问题总结">
-<meta name="twitter:description" content="之前有看过好多网友都在GitHub有搭建过博客，于是今天抽空自己也部署了一个Hexo在自己的GitHub上，把遇到的一些问题总结一下，避免以后犯错。
-GitHub端操作1、配置SSH Keys终端里生成RSA Key
- ssh-keygen -t rsa -C &amp;quot;注册邮箱地址&amp;quot;
-连续3次回车，最终会生成一个文件在用户目录下,">
+<meta name="twitter:description" content="之前有看过好多网友都在GitHub有搭建过博客，于是今天抽空自己也部署了一个Hexo在自己的GitHub上，把遇到的一些问题总结一下，避免以后犯错。以下演示基于MacOS 10.11.5环境。
+
+声明下文内的 “{username} = 你的GitHub登录名”
+
+GitHub端1、配置SSH Keys终端里生成RSA Key
+ sudo ssh-keygen -t rsa -C &amp;quot;{u">
 
 
 
@@ -330,29 +336,37 @@ GitHub端操作1、配置SSH Keys终端里生成RSA Key
       
 
       
-        <p>之前有看过好多网友都在GitHub有搭建过博客，于是今天抽空自己也部署了一个Hexo在自己的GitHub上，把遇到的一些问题总结一下，避免以后犯错。</p>
-<h3 id="GitHub端操作"><a href="#GitHub端操作" class="headerlink" title="GitHub端操作"></a>GitHub端操作</h3><h5 id="1、配置SSH-Keys"><a href="#1、配置SSH-Keys" class="headerlink" title="1、配置SSH Keys"></a>1、配置SSH Keys</h5><p>终端里生成RSA Key</p>
-<p> <code>ssh-keygen -t rsa -C &quot;注册邮箱地址&quot;</code></p>
-<p>连续3次回车，最终会生成一个文件在用户目录下,<br><a id="more"></a><br> <code>vim ~/.ssh/id_rsa.pub</code></p>
+        <p>之前有看过好多网友都在GitHub有搭建过博客，于是今天抽空自己也部署了一个Hexo在自己的GitHub上，把遇到的一些问题总结一下，避免以后犯错。以下演示基于MacOS 10.11.5环境。</p>
+<blockquote>
+<p>声明下文内的 “{username} = 你的GitHub登录名”</p>
+</blockquote>
+<h3 id="GitHub端"><a href="#GitHub端" class="headerlink" title="GitHub端"></a>GitHub端</h3><h5 id="1、配置SSH-Keys"><a href="#1、配置SSH-Keys" class="headerlink" title="1、配置SSH Keys"></a>1、配置SSH Keys</h5><p>终端里生成RSA Key</p>
+<p> <code>sudo ssh-keygen -t rsa -C &quot;{username}@github.com&quot;</code></p>
+<blockquote>
+<p>在Mac环境下，这里一定要使用root权限生成SSHKey，因为后面部署会需要root权限。<br>之前遇到个一个情况，第一次可以使用Hexo部署，没有报错，但之后就不行了，后来基于root重新生成的Key才解决。<br>FATAL Permission denied (publickey).<br>fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights<br>and the repository exists.<br><a href="http://idealife.github.io/2015/10/02/Hexo部署时提示fatal-Could-not-read-from-remote-repository的问题处理/" target="_blank" rel="external">这条解决方法，要感谢这位大神的经验</a><br><a id="more"></a></p>
+</blockquote>
+<p>连续3次回车，最终会生成一个文件在用户目录下,</p>
+<p> <code>sudo vim /var/root/.ssh/id_rsa.pub</code></p>
 <p>复制里面的内容。</p>
 <p>打开你的github主页，进入 <code>Personal settings -&gt; SSH and GPG keys -&gt; New SSH key</code></p>
 <p>Title随便填，将刚刚复制的那串Key粘贴到Key里文本框里，并点击Add SSH Key。</p>
-<h5 id="2、配置github用户名、邮箱"><a href="#2、配置github用户名、邮箱" class="headerlink" title="2、配置github用户名、邮箱"></a>2、配置github用户名、邮箱</h5><p> <code>git config --global user.name &quot;f1tz&quot;</code> // GitHub登录名</p>
-<p> <code>git config --global user.email  &quot;fitz.bao@outlook.com&quot;</code>  // GitHub注册邮箱</p>
+<h5 id="2、配置github用户名、邮箱"><a href="#2、配置github用户名、邮箱" class="headerlink" title="2、配置github用户名、邮箱"></a>2、配置github用户名、邮箱</h5><p> <code>git config --global user.name &quot;{username}&quot;</code> </p>
+<p> <code>git config --global user.email  &quot;xxxx@outlook.com&quot;</code>  // GitHub注册邮箱</p>
 <h5 id="3、配置github在线仓库"><a href="#3、配置github在线仓库" class="headerlink" title="3、配置github在线仓库"></a>3、配置github在线仓库</h5><p>仓库名的格式必须为 <code>{username}.github.io</code> ，<br>而仓库分支必须使用 <code>master</code> ，切记这里不要使用gh-pages分支！！！</p>
 <hr>
-<h3 id="Hexo端操作"><a href="#Hexo端操作" class="headerlink" title="Hexo端操作"></a>Hexo端操作</h3><h5 id="1、配置-config-yml-的部署选项"><a href="#1、配置-config-yml-的部署选项" class="headerlink" title="1、配置 _config.yml 的部署选项"></a>1、配置 _config.yml 的部署选项</h5><pre><code>deploy:
+<h3 id="Hexo端"><a href="#Hexo端" class="headerlink" title="Hexo端"></a>Hexo端</h3><h5 id="1、配置-config-yml-的部署选项"><a href="#1、配置-config-yml-的部署选项" class="headerlink" title="1、配置 _config.yml 的部署选项"></a>1、配置 _config.yml 的部署选项</h5><pre><code>deploy:
 
 type: git //这一项在新版本里必须是git不能是github 
 
 repository: git@github.com:f1tz/f1tz.github.io.git  
 
 branch: master
-</code></pre><h5 id="2、执行-hexo-d-报错-：Deployer-not-found-git"><a href="#2、执行-hexo-d-报错-：Deployer-not-found-git" class="headerlink" title="2、执行 hexo d 报错 ：Deployer not found: git"></a>2、执行 hexo d 报错 ：<code>Deployer not found: git</code></h5><p>先安装 hexo-deployer-git.</p>
+</code></pre><h5 id="2、执行hexo-d-报错-：Deployer-not-found-git"><a href="#2、执行hexo-d-报错-：Deployer-not-found-git" class="headerlink" title="2、执行hexo d 报错 ：Deployer not found: git"></a>2、执行hexo d 报错 ：<code>Deployer not found: git</code></h5><p>先安装 hexo-deployer-git.</p>
 <p><code>$ npm install hexo-deployer-git --save</code></p>
 <p><a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">参考Hexo部署文档</a></p>
-<h5 id="3、执行hexo-d报错：-Error-EACCES-permission-denied"><a href="#3、执行hexo-d报错：-Error-EACCES-permission-denied" class="headerlink" title="3、执行hexo d报错： Error: EACCES: permission denied"></a>3、执行hexo d报错： <code>Error: EACCES: permission denied</code></h5><p>不确定是不是MacOS才会遇到<br>使用sudo 命令执行 hexo d 解决。</p>
-<hr>
+<h5 id="3、执行hexo-d报错：-Error-EACCES-permission-denied"><a href="#3、执行hexo-d报错：-Error-EACCES-permission-denied" class="headerlink" title="3、执行hexo d报错： Error: EACCES: permission denied"></a>3、执行hexo d报错： <code>Error: EACCES: permission denied</code></h5><p>使用sudo 命令执行 hexo d 解决。</p>
+<h5 id="4、执行hexo-d报错：-FATAL-Permission-denied-publickey"><a href="#4、执行hexo-d报错：-FATAL-Permission-denied-publickey" class="headerlink" title="4、执行hexo d报错： FATAL Permission denied (publickey)."></a>4、执行hexo d报错： <code>FATAL Permission denied (publickey).</code></h5><p>解决办法参见本文第一条</p>
 
       
     </div>
@@ -502,7 +516,7 @@ branch: master
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub端操作"><span class="nav-number">1.</span> <span class="nav-text">GitHub端操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、配置SSH-Keys"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、配置SSH Keys</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、配置github用户名、邮箱"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、配置github用户名、邮箱</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、配置github在线仓库"><span class="nav-number">1.0.3.</span> <span class="nav-text">3、配置github在线仓库</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo端操作"><span class="nav-number">2.</span> <span class="nav-text">Hexo端操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、配置-config-yml-的部署选项"><span class="nav-number">2.0.1.</span> <span class="nav-text">1、配置 _config.yml 的部署选项</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、执行-hexo-d-报错-：Deployer-not-found-git"><span class="nav-number">2.0.2.</span> <span class="nav-text">2、执行 hexo d 报错 ：Deployer not found: git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、执行hexo-d报错：-Error-EACCES-permission-denied"><span class="nav-number">2.0.3.</span> <span class="nav-text">3、执行hexo d报错： Error: EACCES: permission denied</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub端"><span class="nav-number">1.</span> <span class="nav-text">GitHub端</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、配置SSH-Keys"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、配置SSH Keys</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、配置github用户名、邮箱"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、配置github用户名、邮箱</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、配置github在线仓库"><span class="nav-number">1.0.3.</span> <span class="nav-text">3、配置github在线仓库</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo端"><span class="nav-number">2.</span> <span class="nav-text">Hexo端</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、配置-config-yml-的部署选项"><span class="nav-number">2.0.1.</span> <span class="nav-text">1、配置 _config.yml 的部署选项</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、执行hexo-d-报错-：Deployer-not-found-git"><span class="nav-number">2.0.2.</span> <span class="nav-text">2、执行hexo d 报错 ：Deployer not found: git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、执行hexo-d报错：-Error-EACCES-permission-denied"><span class="nav-number">2.0.3.</span> <span class="nav-text">3、执行hexo d报错： Error: EACCES: permission denied</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4、执行hexo-d报错：-FATAL-Permission-denied-publickey"><span class="nav-number">2.0.4.</span> <span class="nav-text">4、执行hexo d报错： FATAL Permission denied (publickey).</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
