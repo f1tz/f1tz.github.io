@@ -87,16 +87,22 @@
 
 
 
-<meta name="description" content="还不太会用，就这样先发布了吧。😄">
+<meta name="description" content="网易云课堂加密视频H5播放方式，限MacOS1、使用Safari浏览器，切换UA为iPhone //必须使用Safari浏览器，Chrome切换UA也不行
+2、使用移动端地址打开课程，把URL里的learn替换为course就行了
+1234桌面端 http://mooc.study.163.com/learn/2001336001?tid=2001483002移动端http://mooc.stud">
 <meta property="og:type" content="article">
-<meta property="og:title" content="终于搭建完成了我的Hexo，太棒了！">
-<meta property="og:url" content="http://yoursite.com/2017/03/06/终于搭建完成了我的Hexo，太棒了！/index.html">
+<meta property="og:title" content="S.H.I.E.L.D.">
+<meta property="og:url" content="http://yoursite.com/2018/08/06/网易云课堂加密视频H5播放方式，限MacOS/index.html">
 <meta property="og:site_name" content="S.H.I.E.L.D.">
-<meta property="og:description" content="还不太会用，就这样先发布了吧。😄">
-<meta property="og:updated_time" content="2017-03-06T08:18:34.000Z">
+<meta property="og:description" content="网易云课堂加密视频H5播放方式，限MacOS1、使用Safari浏览器，切换UA为iPhone //必须使用Safari浏览器，Chrome切换UA也不行
+2、使用移动端地址打开课程，把URL里的learn替换为course就行了
+1234桌面端 http://mooc.study.163.com/learn/2001336001?tid=2001483002移动端http://mooc.stud">
+<meta property="og:updated_time" content="2018-08-06T11:31:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="终于搭建完成了我的Hexo，太棒了！">
-<meta name="twitter:description" content="还不太会用，就这样先发布了吧。😄">
+<meta name="twitter:title" content="S.H.I.E.L.D.">
+<meta name="twitter:description" content="网易云课堂加密视频H5播放方式，限MacOS1、使用Safari浏览器，切换UA为iPhone //必须使用Safari浏览器，Chrome切换UA也不行
+2、使用移动端地址打开课程，把URL里的learn替换为course就行了
+1234桌面端 http://mooc.study.163.com/learn/2001336001?tid=2001483002移动端http://mooc.stud">
 
 
 
@@ -124,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/06/终于搭建完成了我的Hexo，太棒了！/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/06/网易云课堂加密视频H5播放方式，限MacOS/"/>
 
 
 
 
 
-  <title> 终于搭建完成了我的Hexo，太棒了！ | S.H.I.E.L.D. </title>
+  <title>  | S.H.I.E.L.D. </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +255,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/06/终于搭建完成了我的Hexo，太棒了！/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/06/网易云课堂加密视频H5播放方式，限MacOS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fitz Bao">
@@ -270,7 +276,7 @@
             
             
               
-                终于搭建完成了我的Hexo，太棒了！
+                
               
             
           </h1>
@@ -285,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-06T16:17:40+08:00">
-                2017-03-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-06T19:25:56+08:00">
+                2018-08-06
               </time>
             
 
@@ -321,8 +327,48 @@
       
 
       
-        <p>还不太会用，就这样先发布了吧。😄</p>
+        <h1 id="网易云课堂加密视频H5播放方式，限MacOS"><a href="#网易云课堂加密视频H5播放方式，限MacOS" class="headerlink" title="网易云课堂加密视频H5播放方式，限MacOS"></a>网易云课堂加密视频H5播放方式，限MacOS</h1><p>1、使用Safari浏览器，切换UA为iPhone //必须使用Safari浏览器，Chrome切换UA也不行</p>
+<p>2、使用移动端地址打开课程，把URL里的learn替换为course就行了</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">桌面端 </div><div class="line">http://mooc.study.163.com/learn/2001336001?tid=2001483002</div><div class="line">移动端</div><div class="line">http://mooc.study.163.com/course/2001336001?tid=2001483002</div></pre></td></tr></table></figure>
+</code></pre><p>3、现在就已经可以通过HTML5播放了，视频加速可以手工用控制台，设置<code>video</code>标签的<code>playbackRate</code>属性。</p>
+<p>4、或者使用我的油猴脚本，虽然写法比较粗糙，基本够用，比手动控制台要快一些。</p>
+<pre><code>// ==UserScript==
+// @name         网易H5视频加速
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  lalala
+// @author       F1tz
+// @match        http://mooc.study.163.com/course/*
+// @grant        none
+// ==/UserScript==
 
+(function() {
+    &apos;use strict&apos;;
+    var selectEL = document.createElement(&apos;select&apos;);
+    selectEL.setAttribute(&apos;id&apos;,&apos;rateSelect&apos;);
+    var option1 = document.createElement(&apos;option&apos;);
+    option1.text = &apos;1倍速&apos;;
+    option1.value = &apos;1&apos;;
+    var option2 = document.createElement(&apos;option&apos;);
+    option2.text = &apos;1.25倍速&apos;;
+    option2.value = &apos;1.25&apos;;
+    var option3 = document.createElement(&apos;option&apos;);
+    option3.text = &apos;1.5倍速&apos;;
+    option3.value = &apos;1.5&apos;;
+    var option4 = document.createElement(&apos;option&apos;);
+    option4.text = &apos;2倍速&apos;;
+    option4.value = &apos;2&apos;;
+    selectEL.add(option1,null);
+    selectEL.add(option2,null);
+    selectEL.add(option3,null);
+    selectEL.add(option4,null);
+    document.getElementById(&apos;j-courseIntroHead&apos;).appendChild(selectEL);
+    var targetVid = document.getElementsByTagName(&apos;video&apos;);
+    document.getElementById(&apos;rateSelect&apos;).addEventListener(&quot;change&quot;,function(){
+        targetVid[0].playbackRate = this.value;
+    });
+})();
+</code></pre>
       
     </div>
 
@@ -352,15 +398,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/04/27/用JS提取GoDaddy可注册的域名后缀列表/" rel="next" title="用JS提取GoDaddy可注册的域名后缀列表">
+                <i class="fa fa-chevron-left"></i> 用JS提取GoDaddy可注册的域名后缀列表
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/06/github部署hexo问题总结/" rel="prev" title="GitHub部署Hexo问题总结">
-                GitHub部署Hexo问题总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -407,8 +453,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://img4.hostingpics.net/pics/992284logoshieldbycaptainfrance.png"
@@ -452,6 +507,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#网易云课堂加密视频H5播放方式，限MacOS"><span class="nav-number">1.</span> <span class="nav-text">网易云课堂加密视频H5播放方式，限MacOS</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
