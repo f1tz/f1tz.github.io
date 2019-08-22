@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- http://jsbb.fmall.rzltech.com/coco_api/auth/getPersonalInfo -->
+	<div id="demo">
+		<button onclick="cors()">test</button>
+	</div>
+	<script>
+		function cors() {
+			var xhr = new XMLHttpRequest();
+			xhr.onreadstatechange = function(){
+				if(this.readState == 4 && this.status == 200){
+					document.getElementById("demo").innerHTML = alert(this.responseText);
+				}
+			};
+			xhr.open("GET", "http://jsbb.fmall.rzltech.com/coco_api/auth/getPersonalInfo", true);
+			xhr.withCredentials = true;
+			xhr.send();
+
+		}
+	</script>
+</body>
+</html>
